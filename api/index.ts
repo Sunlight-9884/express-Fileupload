@@ -24,7 +24,7 @@ app.get("/api", (req: Request, res: Response) => {
   res.send(html);
 });
 
-app.get("/users", (req: Request, res: Response) => {
+app.get("/api/users", (req: Request, res: Response) => {
   res.send({ name: "user1", email: "user1@gmail.com", age: 30 });
 });
 
