@@ -5,6 +5,7 @@ dotenv.config();
 
 const port = 3000;
 const apiUrl = process.env.API_URL;
+
 app.use(express.static("public"));
 
 const html = `
