@@ -31,13 +31,12 @@ const html = `
 </html>
 `;
 
-app.get("/api/html", (req: Request, res: Response) => {
+app.get("/api", (req: Request, res: Response) => {
   res.send(html);
 });
 
 app.get("/api/users", (req: Request, res: Response) => {
   res.json({ name: "user1", email: "user1@gmail.com", age: 30 });
-  
 });
 app.post("/api/uploadFile", (req: Request, res: Response) => {
   const form = formidable({ multiples: true });

@@ -1,12 +1,15 @@
 const apiUrl = localStorage.getItem("apiUrl");
-if (apiUrl) {
 
-  console.log(apiUrl);
-} else {
-  window.location.href = "/api/html";
-}
-
-
+const fetchData = async () => {
+  if (apiUrl) {
+    const res = await fetch(`${apiUrl}/users`);
+    const data = await res.json();
+    console.log(data);
+  } else {
+    window.location.href = "/api";
+  }
+};
+fetchData();
 
 const btn = document.getElementById("btn");
 const fileUpload = document.getElementById("uploadFile");
@@ -20,7 +23,7 @@ btn.addEventListener("click", async () => {
     formData.append("uploadFiles", file);
   });
 
-  const res = await fetch(`${apiUrl}/uploadFile`, {
+  const res = await fetch(apiUrl + "/uploadFile", {
     method: "POST",
 
     body: formData,
@@ -28,5 +31,4 @@ btn.addEventListener("click", async () => {
 
   const data = await res.json();
   console.log(data);
-
 });
