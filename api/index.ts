@@ -31,7 +31,7 @@ const html = `
 </html>
 `;
 
-app.get("/api", (req: Request, res: Response) => {
+app.get("/api/html", (req: Request, res: Response) => {
   res.send(html);
 });
 

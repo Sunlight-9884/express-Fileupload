@@ -1,14 +1,12 @@
 const apiUrl = localStorage.getItem("apiUrl");
+if (apiUrl) {
 
-const fetchData = async () => {
-  if (apiUrl) {
+  console.log(apiUrl);
+} else {
+  window.location.href = "/api/html";
+}
 
-    console.log(apiUrl);
-  } else {
-    window.location.href = "/api";
-  }
-};
-fetchData();
+
 
 const btn = document.getElementById("btn");
 const fileUpload = document.getElementById("uploadFile");
@@ -30,4 +28,5 @@ btn.addEventListener("click", async () => {
 
   const data = await res.json();
   console.log(data);
+
 });
