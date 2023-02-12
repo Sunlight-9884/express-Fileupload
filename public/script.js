@@ -22,7 +22,7 @@ btn.addEventListener("click", async () => {
     formData.append("uploadFiles", file);
   });
 
-  const res = await fetch(apiUrl + "/uploadFile", {
+  const res = await fetch(`${apiUrl}/uploadFile`, {
     method: "POST",
 
     body: formData,
