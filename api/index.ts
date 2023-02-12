@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
-import { createWriteStream, mkdirSync, existsSync, renameSync }  from "fs";
+import { createWriteStream, mkdirSync, existsSync, renameSync } from "fs";
 import bodyparser from "body-parser";
-import formidable, { Fields, Files }  from "formidable";
+import formidable, { Fields, Files } from "formidable";
 import { v4 as uuidv4 } from "uuid";
 const app = express();
 dotenv.config();
@@ -36,7 +36,8 @@ app.get("/api", (req: Request, res: Response) => {
 });
 
 app.get("/api/users", (req: Request, res: Response) => {
-  res.send({ name: "user1", email: "user1@gmail.com", age: 30 });
+  res.json({ name: "user1", email: "user1@gmail.com", age: 30 });
+  
 });
 app.post("/api/uploadFile", (req: Request, res: Response) => {
   const form = formidable({ multiples: true });
