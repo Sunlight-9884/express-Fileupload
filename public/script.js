@@ -2,9 +2,8 @@ const apiUrl = localStorage.getItem("apiUrl");
 
 const fetchData = async () => {
   if (apiUrl) {
-    const res = await fetch(`${apiUrl}/users`);
-    const data = await res.json();
-    console.log(data);
+
+    console.log(apiUrl);
   } else {
     window.location.href = "/api";
   }
